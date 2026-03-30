@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { observer } from 'mobx-react-lite';
+import { useStore } from '../hooks/useStore';
 import DeleteButton from './DeleteButton';
 import coldWaterIcon from '../assets/coldWaterIcon.svg';
 import hotWaterIcon from '../assets/hotWaterIcon.svg';
@@ -12,7 +14,8 @@ interface Props {
     installation_date: string | null;
     is_automatic: boolean | null;
     _type: string[];
-    area: {
+    area?: {
+      id: string;
       str_number_full: string;
       house: {
         address: string;
@@ -107,8 +110,8 @@ const formatDate = (dateToFormat: string | null) => {
 };
 
 const formatIsAutomatic = (automaticToFormat: boolean | null) => {
-  if (automaticToFormat === true) return 'да';
-  if (automaticToFormat === false) return 'нет';
+  if (automaticToFormat === true) return 'Да';
+  if (automaticToFormat === false) return 'Нет';
   return 'Нет данных';
 };
 
@@ -130,7 +133,8 @@ const formatType = (typeArray: string[]) => {
   return 'Прибор уч.';
 };
 
-const TableRow = ({ index, data, isLoadingArea }: Props) => {
+const TableRow = observer(({ index, data, isLoadingArea }: Props) => {
+  const { metersStore } = useStore();
   const typeText = formatType(data._type);
   const iconPath = getTypeIconPath(data._type);
 
@@ -140,8 +144,8 @@ const TableRow = ({ index, data, isLoadingArea }: Props) => {
     ? `${data.area.house.address} ${data.area.str_number_full}`
     : 'Адрес не найден';
 
-  const handleDelete = (id: string) => {
-    console.log(id);
+  const handleDelete = async (id: string) => {
+    await metersStore.deleteMeter(id);
   };
 
   return (
@@ -161,6 +165,6 @@ const TableRow = ({ index, data, isLoadingArea }: Props) => {
       </TableButtonArea>
     </StyledTableRow>
   );
-};
+});
 
 export default TableRow;

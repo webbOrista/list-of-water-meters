@@ -15,6 +15,9 @@ interface AreasResponse {
 const api = axios.create({
   baseURL: 'https://showroom.eis24.me/c300/api/v4/test',
   timeout: 10000,
+  headers: {
+    'Content-Type': 'application/json',
+  },
 });
 
 const areaCache = new Map<string, Area>();
@@ -47,4 +50,8 @@ export const getAreasByIds = async (ids: string[]): Promise<Area[]> => {
   });
 
   return ids.map((id) => areaCache.get(id)!);
+};
+
+export const deleteMeter = async (meterId: string): Promise<void> => {
+  await api.delete(`/meters/${meterId}/`);
 };

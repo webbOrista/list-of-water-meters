@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Table from '../components/Table';
 import Header from '../components/Header';
+import { RootStoreProvider } from '../contexts/RootStoreContext';
 
 const AppContainer = styled.div`
   display: flex;
@@ -12,10 +13,12 @@ const AppContainer = styled.div`
 
 function App() {
   return (
-    <AppContainer>
-      <Header />
-      <Table />
-    </AppContainer>
+    <RootStoreProvider>
+      <AppContainer>
+        <Header />
+        <Table />
+      </AppContainer>
+    </RootStoreProvider>
   );
 }
 

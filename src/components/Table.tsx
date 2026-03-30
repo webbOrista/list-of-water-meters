@@ -1,6 +1,8 @@
 import styled from 'styled-components';
+import { useEffect } from 'react';
+import { observer } from 'mobx-react-lite';
+import { useStore } from '../hooks/useStore';
 import { MoonLoader } from 'react-spinners';
-import { useMetersData } from '../hooks/useMetersData';
 import TableRow from './TableRow';
 import Pagination from './Pagination';
 
@@ -123,17 +125,23 @@ const PaginationContainer = styled.div`
   background-color: white;
 `;
 
-const Table = () => {
+const Table = observer(() => {
+  const { metersStore } = useStore();
+
   const {
-    data,
-    loading,
-    loadingAreas,
-    error,
+    meters: data,
+    loadingAreas: loadingAreas,
+    loading: loading,
+    error: error,
     totalPages,
-    currentPage,
+    currentPage: currentPage,
     changePage,
-    refresh,
-  } = useMetersData();
+    fetchMeters,
+  } = metersStore;
+
+  useEffect(() => {
+    fetchMeters(1);
+  }, [fetchMeters]);
 
   return (
     <>
@@ -195,6 +203,6 @@ const Table = () => {
       )}
     </>
   );
-};
+});
 
 export default Table;
