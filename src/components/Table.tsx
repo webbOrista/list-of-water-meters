@@ -1,18 +1,24 @@
 import styled from 'styled-components';
 import { MoonLoader } from 'react-spinners';
+import { useMetersData } from '../hooks/useMetersData';
 import TableRow from './TableRow';
-import { MOCKDATA } from '../api/api';
 
-const Center = styled.div`
+const FullWidthTableRow = styled.tr`
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+`;
+
+const Center = styled.td`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40vh;
+  height: 60vh;
 `;
 
-const ErrorText = styled.p`
-  color: #d10505;
-  font-size: 20px;
+const InfoText = styled.p`
+  color: #697180;
+  font-size: 16px;
 `;
 
 const TableWrapper = styled.div`
@@ -109,45 +115,92 @@ const StyledTbody = styled.tbody`
 `;
 
 const Table = () => {
-  // const { data, error, loading } = useMetersData();
-
-  // if (loading)
-  //   return (
-  //     <Center>
-  //       <MoonLoader color="#F0F3F7" size={80} />
-  //     </Center>
-  //   );
-  // if (error)
-  //   return (
-  //     <Center>
-  //       <ErrorText>Ошибка: {error}</ErrorText>
-  //     </Center>
-  //   );
-
-  const data = MOCKDATA.results;
+  const {
+    data,
+    loading,
+    loadingAreas,
+    error,
+    totalPages,
+    currentPage,
+    changePage,
+    refresh,
+  } = useMetersData();
 
   return (
-    <TableWrapper>
-      <StyledTable>
-        <StyledThead>
-          <TableHeader>
-            <TableHeaderNumber>№</TableHeaderNumber>
-            <TableHeaderType>Тип</TableHeaderType>
-            <TableHeaderDate>Дата установки</TableHeaderDate>
-            <TableHeaderAutomatic>Автоматический</TableHeaderAutomatic>
-            <TableHeaderCurrent>Текущие показания</TableHeaderCurrent>
-            <TableHeaderAdress>Адрес</TableHeaderAdress>
-            <TableHeaderNote>Примечание</TableHeaderNote>
-            <TableButtonArea></TableButtonArea>
-          </TableHeader>
-        </StyledThead>
-        <StyledTbody>
-          {data.map((meter, index) => (
-            <TableRow key={meter.id} index={index} data={meter} />
-          ))}
-        </StyledTbody>
-      </StyledTable>
-    </TableWrapper>
+    <>
+      <TableWrapper>
+        <StyledTable>
+          <StyledThead>
+            <TableHeader>
+              <TableHeaderNumber>№</TableHeaderNumber>
+              <TableHeaderType>Тип</TableHeaderType>
+              <TableHeaderDate>Дата установки</TableHeaderDate>
+              <TableHeaderAutomatic>Автоматический</TableHeaderAutomatic>
+              <TableHeaderCurrent>Текущие показания</TableHeaderCurrent>
+              <TableHeaderAdress>Адрес</TableHeaderAdress>
+              <TableHeaderNote>Примечание</TableHeaderNote>
+              <TableButtonArea></TableButtonArea>
+            </TableHeader>
+          </StyledThead>
+          <StyledTbody>
+            {loading ? (
+              <FullWidthTableRow>
+                <Center colSpan={8}>
+                  <MoonLoader color="#697180" size={80} />
+                </Center>
+              </FullWidthTableRow>
+            ) : error ? (
+              <FullWidthTableRow>
+                <Center colSpan={8}>
+                  <InfoText>Ошибка: {error}</InfoText>
+                </Center>
+              </FullWidthTableRow>
+            ) : data.length === 0 ? (
+              <FullWidthTableRow>
+                <Center colSpan={8}>
+                  <InfoText>Данных нет</InfoText>
+                </Center>
+              </FullWidthTableRow>
+            ) : (
+              data.map((meter, index) => (
+                <TableRow
+                  key={meter.id}
+                  index={(currentPage - 1) * 20 + index}
+                  data={meter}
+                  isLoadingArea={loadingAreas && !meter.area}
+                />
+              ))
+            )}
+          </StyledTbody>
+        </StyledTable>
+      </TableWrapper>
+      {totalPages > 1 && (
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            gap: '16px',
+            padding: '20px',
+          }}
+        >
+          <button
+            onClick={() => changePage(currentPage - 1)}
+            disabled={currentPage === 1 || loading}
+          >
+            Предыдущая
+          </button>
+          <span>
+            Страница {currentPage} из {totalPages}
+          </span>
+          <button
+            onClick={() => changePage(currentPage + 1)}
+            disabled={currentPage === totalPages || loading}
+          >
+            Следующая
+          </button>
+        </div>
+      )}
+    </>
   );
 };
 

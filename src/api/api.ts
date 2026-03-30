@@ -1,337 +1,50 @@
-export const MOCKDATA = {
-  count: 1416,
-  next: 'http://showroom.eis24.me/api/v4/test/meters/?limit=100&offset=100',
-  previous: null,
-  results: [
-    {
-      id: '526a0caae0e34c3e6dda9a81',
-      _type: ['ColdWaterAreaMeter', 'AreaMeter'],
-      area: {
-        id: '526237d1e0e34c524382c074',
-      },
-      is_automatic: null,
-      communication: '5b20f6b664c0360001ed0fd2',
-      description: '1',
-      serial_number: '',
-      installation_date: '2010-06-01T00:00:00',
-      brand_name: null,
-      model_name: null,
-      initial_values: [125.0],
-    },
-    {
-      id: '526a0caae0e34c3e6dda9a82',
-      _type: ['ColdWaterAreaMeter', 'AreaMeter'],
-      area: {
-        id: '526237d1e0e34c524382c074',
-      },
-      is_automatic: null,
-      communication: '5b20f6a864c0360001ed0d5a',
-      description: '2',
-      serial_number: '',
-      installation_date: '2010-06-01T00:00:00',
-      brand_name: null,
-      model_name: null,
-      initial_values: [41.0],
-    },
-    {
-      id: '526a0caae0e34c3e6dda9a82',
-      _type: ['ColdWaterAreaMeter', 'AreaMeter'],
-      area: {
-        id: '526237d1e0e34c524382c074',
-      },
-      is_automatic: null,
-      communication: '5b20f6a864c0360001ed0d5a',
-      description: '2',
-      serial_number: '',
-      installation_date: '2010-06-01T00:00:00',
-      brand_name: null,
-      model_name: null,
-      initial_values: [41.0],
-    },
-    {
-      id: '526a0caae0e34c3e6dda9a82',
-      _type: ['ColdWaterAreaMeter', 'AreaMeter'],
-      area: {
-        id: '526237d1e0e34c524382c074',
-      },
-      is_automatic: null,
-      communication: '5b20f6a864c0360001ed0d5a',
-      description: '2',
-      serial_number: '',
-      installation_date: '2010-06-01T00:00:00',
-      brand_name: null,
-      model_name: null,
-      initial_values: [41.0],
-    },
-    {
-      id: '526a0caae0e34c3e6dda9a82',
-      _type: ['ColdWaterAreaMeter', 'AreaMeter'],
-      area: {
-        id: '526237d1e0e34c524382c074',
-      },
-      is_automatic: null,
-      communication: '5b20f6a864c0360001ed0d5a',
-      description: '2',
-      serial_number: '',
-      installation_date: '2010-06-01T00:00:00',
-      brand_name: null,
-      model_name: null,
-      initial_values: [41.0],
-    },
-    {
-      id: '526a0caae0e34c3e6dda9a82',
-      _type: ['ColdWaterAreaMeter', 'AreaMeter'],
-      area: {
-        id: '526237d1e0e34c524382c074',
-      },
-      is_automatic: null,
-      communication: '5b20f6a864c0360001ed0d5a',
-      description: '2',
-      serial_number: '',
-      installation_date: '2010-06-01T00:00:00',
-      brand_name: null,
-      model_name: null,
-      initial_values: [41.0],
-    },
-    {
-      id: '526a0caae0e34c3e6dda9a82',
-      _type: ['ColdWaterAreaMeter', 'AreaMeter'],
-      area: {
-        id: '526237d1e0e34c524382c074',
-      },
-      is_automatic: null,
-      communication: '5b20f6a864c0360001ed0d5a',
-      description: '2',
-      serial_number: '',
-      installation_date: '2010-06-01T00:00:00',
-      brand_name: null,
-      model_name: null,
-      initial_values: [41.0],
-    },
-    {
-      id: '526a0caae0e34c3e6dda9a82',
-      _type: ['ColdWaterAreaMeter', 'AreaMeter'],
-      area: {
-        id: '526237d1e0e34c524382c074',
-      },
-      is_automatic: null,
-      communication: '5b20f6a864c0360001ed0d5a',
-      description: '2',
-      serial_number: '',
-      installation_date: '2010-06-01T00:00:00',
-      brand_name: null,
-      model_name: null,
-      initial_values: [41.0],
-    },
-    {
-      id: '526a0caae0e34c3e6dda9a82',
-      _type: ['ColdWaterAreaMeter', 'AreaMeter'],
-      area: {
-        id: '526237d1e0e34c524382c074',
-      },
-      is_automatic: null,
-      communication: '5b20f6a864c0360001ed0d5a',
-      description: '2',
-      serial_number: '',
-      installation_date: '2010-06-01T00:00:00',
-      brand_name: null,
-      model_name: null,
-      initial_values: [41.0],
-    },
-    {
-      id: '526a0caae0e34c3e6dda9a82',
-      _type: ['ColdWaterAreaMeter', 'AreaMeter'],
-      area: {
-        id: '526237d1e0e34c524382c074',
-      },
-      is_automatic: null,
-      communication: '5b20f6a864c0360001ed0d5a',
-      description: '2',
-      serial_number: '',
-      installation_date: '2010-06-01T00:00:00',
-      brand_name: null,
-      model_name: null,
-      initial_values: [41.0],
-    },
-    {
-      id: '526a0caae0e34c3e6dda9a82',
-      _type: ['ColdWaterAreaMeter', 'AreaMeter'],
-      area: {
-        id: '526237d1e0e34c524382c074',
-      },
-      is_automatic: null,
-      communication: '5b20f6a864c0360001ed0d5a',
-      description: '2',
-      serial_number: '',
-      installation_date: '2010-06-01T00:00:00',
-      brand_name: null,
-      model_name: null,
-      initial_values: [41.0],
-    },
-    {
-      id: '526a0caae0e34c3e6dda9a82',
-      _type: ['ColdWaterAreaMeter', 'AreaMeter'],
-      area: {
-        id: '526237d1e0e34c524382c074',
-      },
-      is_automatic: null,
-      communication: '5b20f6a864c0360001ed0d5a',
-      description: '2',
-      serial_number: '',
-      installation_date: '2010-06-01T00:00:00',
-      brand_name: null,
-      model_name: null,
-      initial_values: [41.0],
-    },
-    {
-      id: '526a0caae0e34c3e6dda9a82',
-      _type: ['ColdWaterAreaMeter', 'AreaMeter'],
-      area: {
-        id: '526237d1e0e34c524382c074',
-      },
-      is_automatic: null,
-      communication: '5b20f6a864c0360001ed0d5a',
-      description: '2',
-      serial_number: '',
-      installation_date: '2010-06-01T00:00:00',
-      brand_name: null,
-      model_name: null,
-      initial_values: [41.0],
-    },
-    {
-      id: '526a0caae0e34c3e6dda9a82',
-      _type: ['ColdWaterAreaMeter', 'AreaMeter'],
-      area: {
-        id: '526237d1e0e34c524382c074',
-      },
-      is_automatic: null,
-      communication: '5b20f6a864c0360001ed0d5a',
-      description: '2',
-      serial_number: '',
-      installation_date: '2010-06-01T00:00:00',
-      brand_name: null,
-      model_name: null,
-      initial_values: [41.0],
-    },
-    {
-      id: '526a0caae0e34c3e6dda9a82',
-      _type: ['ColdWaterAreaMeter', 'AreaMeter'],
-      area: {
-        id: '526237d1e0e34c524382c074',
-      },
-      is_automatic: null,
-      communication: '5b20f6a864c0360001ed0d5a',
-      description: '2',
-      serial_number: '',
-      installation_date: '2010-06-01T00:00:00',
-      brand_name: null,
-      model_name: null,
-      initial_values: [41.0],
-    },
-    {
-      id: '526a0caae0e34c3e6dda9a82',
-      _type: ['ColdWaterAreaMeter', 'AreaMeter'],
-      area: {
-        id: '526237d1e0e34c524382c074',
-      },
-      is_automatic: null,
-      communication: '5b20f6a864c0360001ed0d5a',
-      description: '2',
-      serial_number: '',
-      installation_date: '2010-06-01T00:00:00',
-      brand_name: null,
-      model_name: null,
-      initial_values: [41.0],
-    },
-    {
-      id: '526a0caae0e34c3e6dda9a82',
-      _type: ['ColdWaterAreaMeter', 'AreaMeter'],
-      area: {
-        id: '526237d1e0e34c524382c074',
-      },
-      is_automatic: null,
-      communication: '5b20f6a864c0360001ed0d5a',
-      description: '2',
-      serial_number: '',
-      installation_date: '2010-06-01T00:00:00',
-      brand_name: null,
-      model_name: null,
-      initial_values: [41.0],
-    },
-    {
-      id: '526a0caae0e34c3e6dda9a82',
-      _type: ['ColdWaterAreaMeter', 'AreaMeter'],
-      area: {
-        id: '526237d1e0e34c524382c074',
-      },
-      is_automatic: null,
-      communication: '5b20f6a864c0360001ed0d5a',
-      description: '2',
-      serial_number: '',
-      installation_date: '2010-06-01T00:00:00',
-      brand_name: null,
-      model_name: null,
-      initial_values: [41.0],
-    },
-    {
-      id: '526a0caae0e34c3e6dda9a82',
-      _type: ['ColdWaterAreaMeter', 'AreaMeter'],
-      area: {
-        id: '526237d1e0e34c524382c074',
-      },
-      is_automatic: null,
-      communication: '5b20f6a864c0360001ed0d5a',
-      description: '2',
-      serial_number: '',
-      installation_date: '2010-06-01T00:00:00',
-      brand_name: null,
-      model_name: null,
-      initial_values: [41.0],
-    },
-    {
-      id: '526a0caae0e34c3e6dda9a82',
-      _type: ['ColdWaterAreaMeter', 'AreaMeter'],
-      area: {
-        id: '526237d1e0e34c524382c074',
-      },
-      is_automatic: null,
-      communication: '5b20f6a864c0360001ed0d5a',
-      description: '2',
-      serial_number: '',
-      installation_date: '2010-06-01T00:00:00',
-      brand_name: null,
-      model_name: null,
-      initial_values: [41.0],
-    },
-    {
-      id: '526a0caae0e34c3e6dda9a82',
-      _type: ['ColdWaterAreaMeter', 'AreaMeter'],
-      area: {
-        id: '526237d1e0e34c524382c074',
-      },
-      is_automatic: null,
-      communication: '5b20f6a864c0360001ed0d5a',
-      description: '2',
-      serial_number: '',
-      installation_date: '2010-06-01T00:00:00',
-      brand_name: null,
-      model_name: null,
-      initial_values: [41.0],
-    },
-    {
-      id: '526a0caae0e34c3e6dda9a82',
-      _type: ['ColdWaterAreaMeter', 'AreaMeter'],
-      area: {
-        id: '526237d1e0e34c524382c074',
-      },
-      is_automatic: null,
-      communication: '5b20f6a864c0360001ed0d5a',
-      description: '2',
-      serial_number: '',
-      installation_date: '2010-06-01T00:00:00',
-      brand_name: null,
-      model_name: null,
-      initial_values: [41.0],
-    },
-  ],
+import axios from 'axios';
+import { Meter, Area } from '../types/types';
+
+interface MetersResponse {
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: Meter[];
+}
+
+interface AreasResponse {
+  results: Area[];
+}
+
+const api = axios.create({
+  baseURL: 'https://showroom.eis24.me/c300/api/v4/test',
+  timeout: 10000,
+});
+
+const areaCache = new Map<string, Area>();
+
+export const getMeters = async (
+  limit: number = 20,
+  offset: number = 0
+): Promise<MetersResponse> => {
+  const response = await api.get<MetersResponse>('/meters/', {
+    params: { limit, offset },
+  });
+  return response.data;
+};
+
+export const getAreasByIds = async (ids: string[]): Promise<Area[]> => {
+  if (ids.length === 0) return [];
+
+  const unknownIds = ids.filter((id) => !areaCache.has(id));
+
+  if (unknownIds.length === 0) {
+    return ids.map((id) => areaCache.get(id)!);
+  }
+
+  const response = await api.get<AreasResponse>('/areas/', {
+    params: new URLSearchParams(unknownIds.map((id) => ['id__in', id])),
+  });
+
+  response.data.results.forEach((area) => {
+    areaCache.set(area.id, area);
+  });
+
+  return ids.map((id) => areaCache.get(id)!);
 };

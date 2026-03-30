@@ -5,7 +5,7 @@ import Header from '../components/Header';
 const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start
   height: 100vh;
   padding: 16px;
 `;

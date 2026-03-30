@@ -12,7 +12,14 @@ interface Props {
     installation_date: string | null;
     is_automatic: boolean | null;
     _type: string[];
+    area: {
+      str_number_full: string;
+      house: {
+        address: string;
+      };
+    };
   };
+  isLoadingArea: boolean;
 }
 
 const TableButtonArea = styled.td`
@@ -123,9 +130,15 @@ const formatType = (typeArray: string[]) => {
   return 'Прибор уч.';
 };
 
-const TableRow = ({ index, data }: Props) => {
+const TableRow = ({ index, data, isLoadingArea }: Props) => {
   const typeText = formatType(data._type);
   const iconPath = getTypeIconPath(data._type);
+
+  const address = isLoadingArea
+    ? 'Адрес загружается'
+    : data.area
+    ? `${data.area.house.address} ${data.area.str_number_full}`
+    : 'Адрес не найден';
 
   const handleDelete = (id: string) => {
     console.log(id);
@@ -141,7 +154,7 @@ const TableRow = ({ index, data }: Props) => {
       <TableDate>{formatDate(data.installation_date)}</TableDate>
       <TableAutomatic>{formatIsAutomatic(data.is_automatic)}</TableAutomatic>
       <TableCurrent>{data.initial_values}</TableCurrent>
-      <TableAdress></TableAdress>
+      <TableAdress>{address}</TableAdress>
       <TableNote>{data.description}</TableNote>
       <TableButtonArea>
         <DeleteButton onClick={() => handleDelete(data.id)} />
