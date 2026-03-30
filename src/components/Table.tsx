@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { MoonLoader } from 'react-spinners';
 import { useMetersData } from '../hooks/useMetersData';
 import TableRow from './TableRow';
+import Pagination from './Pagination';
 
 const FullWidthTableRow = styled.tr`
   display: table;
@@ -62,7 +63,7 @@ const TableHeader = styled.tr`
 const TableHeaderNumber = styled.th`
   padding-left: 17px;
   padding-right: 17px;
-  width: 48px;
+  width: 60px;
 `;
 
 const TableHeaderType = styled.th`
@@ -112,6 +113,14 @@ const StyledTbody = styled.tbody`
   &::-webkit-scrollbar-thumb:hover {
     background-color: #5e6674;
   }
+`;
+
+const PaginationContainer = styled.div`
+  height: 48px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: white;
 `;
 
 const Table = () => {
@@ -175,30 +184,14 @@ const Table = () => {
         </StyledTable>
       </TableWrapper>
       {totalPages > 1 && (
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '16px',
-            padding: '20px',
-          }}
-        >
-          <button
-            onClick={() => changePage(currentPage - 1)}
-            disabled={currentPage === 1 || loading}
-          >
-            Предыдущая
-          </button>
-          <span>
-            Страница {currentPage} из {totalPages}
-          </span>
-          <button
-            onClick={() => changePage(currentPage + 1)}
-            disabled={currentPage === totalPages || loading}
-          >
-            Следующая
-          </button>
-        </div>
+        <PaginationContainer>
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            changePage={changePage}
+            loading={loading}
+          />
+        </PaginationContainer>
       )}
     </>
   );

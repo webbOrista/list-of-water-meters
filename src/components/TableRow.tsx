@@ -62,7 +62,7 @@ const StyledTableRow = styled.tr`
 
 const TableNumber = styled.td`
   text-align: center;
-  width: 48px;
+  width: 60px;
 `;
 
 const TableType = styled.td`
