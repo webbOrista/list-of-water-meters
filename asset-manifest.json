@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/list-of-water-meters/static/css/main.4fff2444.css",
-    "main.js": "/list-of-water-meters/static/js/main.070a2899.js",
+    "main.js": "/list-of-water-meters/static/js/main.fb72b6bf.js",
     "static/media/deleteDefaultIcon.svg": "/list-of-water-meters/static/media/deleteDefaultIcon.9fabb8a755d184d056946a78c54f4683.svg",
     "static/media/deleteHoverIcon.svg": "/list-of-water-meters/static/media/deleteHoverIcon.2cf2480959375e2ca10ef95c682d6cb0.svg",
     "index.html": "/list-of-water-meters/index.html",
     "static/media/coldWaterIcon.svg": "/list-of-water-meters/static/media/coldWaterIcon.4e4282d152c27047eb855a0071c146ad.svg",
     "static/media/hotWaterIcon.svg": "/list-of-water-meters/static/media/hotWaterIcon.da793c0d06425ddab6f1cf6ff1d80180.svg",
     "main.4fff2444.css.map": "/list-of-water-meters/static/css/main.4fff2444.css.map",
-    "main.070a2899.js.map": "/list-of-water-meters/static/js/main.070a2899.js.map"
+    "main.fb72b6bf.js.map": "/list-of-water-meters/static/js/main.fb72b6bf.js.map"
   },
   "entrypoints": [
     "static/css/main.4fff2444.css",
-    "static/js/main.070a2899.js"
+    "static/js/main.fb72b6bf.js"
   ]
 }
